@@ -19,7 +19,7 @@ return new class extends Migration
             $table->bigInteger('product_id');
             $table->integer('qty');
             $table->timestamps();
-            $table->string('status');
+            $table->enum('status', ['checkedout','notyet','cancelled']);
         });
     }
 

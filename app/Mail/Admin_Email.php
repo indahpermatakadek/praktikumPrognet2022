@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Email extends Mailable
+class Admin_Email extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,10 +28,7 @@ class Email extends Mailable
      */
     public function build()
     {
-        // return $this->markdown('emails.email', [
-        //     'email_data' => $this->email_data
-        // ]);
-        return $this->view('mails.user.signup-email', [
+        return $this->view('mails.admin.signup-email', [
             'email_data' => $this->email_data
         ]);
     }

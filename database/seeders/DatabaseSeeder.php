@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Hash;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('adminganteng'),
             'phone' => 0,
             'profile_image' => 'Foto',
+            'email_verified_at' => new Carbon(),
         ]);
     }
 }

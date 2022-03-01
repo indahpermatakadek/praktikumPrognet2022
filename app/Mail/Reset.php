@@ -31,7 +31,7 @@ class Reset extends Mailable
         // return $this->markdown('emails.email', [
         //     'email_data' => $this->email_data
         // ]);
-        return $this->view('mails.resetpassword-email', [
+        return $this->view('mails.user.resetpassword-email', [
             'email_data' => $this->email_data
         ]);
     }

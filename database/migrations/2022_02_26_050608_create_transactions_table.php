@@ -26,7 +26,7 @@ return new class extends Migration
             $table->bigInteger('courier_id');
             $table->string('proof_of_payment');
             $table->timestamps();
-            $table->string('status');
+            $table->enum('status',['unverified','verified','delivered','success','expired','canceled']);
         });
     }
 

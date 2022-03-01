@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Email extends Mailable
+class Admin_Reset extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -31,7 +31,7 @@ class Email extends Mailable
         // return $this->markdown('emails.email', [
         //     'email_data' => $this->email_data
         // ]);
-        return $this->view('mails.user.signup-email', [
+        return $this->view('mails.admin.resetpassword-email', [
             'email_data' => $this->email_data
         ]);
     }

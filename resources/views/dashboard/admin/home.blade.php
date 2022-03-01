@@ -1,4 +1,4 @@
-@extends('dashboard.admin.layout')
+@extends('dashboard.admin.layouthome')
 
 @section('content')
     <div class="relative rounded shadow-xl p-5 w-[80%] mx-auto divide-y-2 divide-emerald-900 bg-cyan-500 shadow-cyan-500/50">

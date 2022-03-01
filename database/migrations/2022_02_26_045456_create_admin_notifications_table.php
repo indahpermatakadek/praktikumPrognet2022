@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('type');
             $table->string('notifiable_type');
-            $table->string('notifiable_id');
-            $table->string('data');
+            $table->bigInteger('notifiable_id');
+            $table->text('data');
             $table->timestamp('read_at');
             $table->timestamps();
         });

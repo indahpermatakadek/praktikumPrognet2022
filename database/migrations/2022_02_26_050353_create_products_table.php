@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('product_name');
             $table->double('price', 9, 2)->unsigned();
-            $table->string('description');
+            $table->text('description');
             $table->double('product_rate', 9, 2);
             $table->timestamps();
             $table->integer('stock')->unsigned();

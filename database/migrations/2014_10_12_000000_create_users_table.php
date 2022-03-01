@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('profile_image')->nullable();
+            $table->enum('status',['aktif','nonaktif'])->default('aktif');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('verification_code')->nullable();
             $table->rememberToken();

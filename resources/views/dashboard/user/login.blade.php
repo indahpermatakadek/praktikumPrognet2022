@@ -1,7 +1,7 @@
 @extends('dashboard.user.layouthomepage')
 
 @section('content')
-<div class="relative border border-slate-200 rounded-xl bg-[#f7f7f7] mx-auto md:ml-[50px] shadow-xl p-5">
+<div class="relative w-[400px] border border-slate-200 rounded-xl bg-[#f7f7f7] mx-auto md:ml-[50px] shadow-xl p-5">
 
     <center><h2 class="text-[#951b5c] text-5xl font-black mb-4 w-full">Login Here</h2></center>
 
@@ -37,16 +37,18 @@
             <input type="password" id="password" name="password" placeholder="masukkan password ..." class="peer px-3 py-2 border shadow rounded w-full block text-sm focus:outline-none focus:ring-1 focus:ring-[#951b5c] focus:border-[#951b5c]" required>
         </label>
 
-        <div class="flex justify-end items-end my-3">
-            {{-- <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" id="exampleCheck2">
-                <label class="form-check-label inline-block text-gray-800" for="exampleCheck2">
-                    Show Password
-                </label>
-            </div> --}}
-            <a href="{{ route('user.forgot-password') }}" class="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">
-                Forgot password?
-            </a>
+        <div class="flex justify-between items-end my-3">
+            <div>
+                <span class="cursor-pointer">
+                    <input class="cursor-pointer" type="checkbox" name="remember" id="remember" value="remember">
+                    <label class="cursor-pointer" for="remember">Keep me logged in</label>
+                </span>
+            </div>
+            <div>
+                <a href="{{ route('user.forgot-password') }}" class="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">
+                    Forgot password?
+                </a>
+            </div>
         </div>
 
         <button type="submit" class="mt-3 rounded px-4 py-1 w-full bg-[#80134d] text-slate-100 hover:bg-[#951b5c] active:bg-[#630c3b] hover:shadow-xl hover:shadow-[#951b5c/50]">

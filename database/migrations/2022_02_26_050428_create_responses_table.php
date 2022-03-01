@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('review_id');
             $table->bigInteger('admin_id');
-            $table->string('content');
+            $table->text('content');
             $table->timestamps();
         });
     }

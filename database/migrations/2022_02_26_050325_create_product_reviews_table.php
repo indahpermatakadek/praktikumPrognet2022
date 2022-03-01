@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('product_id');
             $table->bigInteger('user_id');
             $table->double('rate', 9, 2);
-            $table->string('content');
+            $table->text('content');
             $table->timestamps();
         });
     }
