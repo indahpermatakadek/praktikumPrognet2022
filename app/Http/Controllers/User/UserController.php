@@ -18,14 +18,20 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required',
             'confirm_password' => 'required|same:password',
+            'image' => 'image',
         ]);
+
+        $gambar = 'profile_picture/qkgbvuIXKHy6MrFK2hCBOdjTquLQYqmSlyfND3ml.png';
+        if($req->file('image')){
+            $gambar = $req->file('image')->store('profile_picture');            
+        }
 
         // Buat User baru
         $user = new User();
         $user->name = $req->name;
         $user->email = $req->email;
         $user->password = Hash::make($req->password);
-        $user->profile_image = 'Foto';
+        $user->profile_image = $gambar;
         $user->verification_code = sha1(time());
         $data = $user->save();
 

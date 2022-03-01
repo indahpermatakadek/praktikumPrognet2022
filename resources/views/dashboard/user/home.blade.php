@@ -5,5 +5,11 @@
         <h1 class="my-2 font-bold">DASHBOARD</h1>
         {{-- <hr class="my-4 border-bold"> --}}
         <h2 class="p-3">Welcome to User Dashboard {{ auth()->user()->name }}</h2>
+
+        <div class="p-3 flex justify-center items-center w-full">
+            <div class="bg-slate-200 rounded-full w-[300px] h-[300px] overflow-hidden">
+                <img src="{{ asset('storage/' . auth()->user()->profile_image) }}" alt="Profile Image" class="max-w-[300px]"/>
+            </div>
+        </div>
     </div>
 @endsection

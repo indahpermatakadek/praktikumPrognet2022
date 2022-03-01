@@ -13,7 +13,7 @@
 
     <hr class="my-2"/>
 
-    <form action="{{ route('user.create') }}" method="POST">
+    <form action="{{ route('user.create') }}" enctype="multipart/form-data" method="POST">
         @csrf
         <div class="p-1 w-full flex flex-wrap justify-between max-h-[200px] md:max-h-full overflow-y-scroll overscroll-none" id="user_details">
 
@@ -49,7 +49,7 @@
             <div class="w-full md:w-[calc(100%/2-20px)]">
                 <label class="block">
                     <span class="block font-semibold mb-1 text-slate-700">Pilih Foto Profile</span>
-                    <input type="file" name="image" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-slate-700 hover:file:bg-violet-100"/>
+                    <input type="file" name="image" id="image" class="cursor-pointer block w-full text-sm text-slate-700 file:cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-slate-700 hover:file:bg-red-100"/>
                 </label>
             </div>
 
