@@ -21,7 +21,7 @@ class UserController extends Controller
             'image' => 'image',
         ]);
 
-        $gambar = 'profile_picture/qkgbvuIXKHy6MrFK2hCBOdjTquLQYqmSlyfND3ml.png';
+        $gambar = null;
         if($req->file('image')){
             $gambar = $req->file('image')->store('profile_picture');            
         }

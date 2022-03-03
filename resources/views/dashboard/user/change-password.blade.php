@@ -1,9 +1,11 @@
 @extends('dashboard.user.layouthomepage')
 
 @section('css')
-#user_details::-webkit-scrollbar {
-    width: 0;
-}
+<style>
+    #user_details::-webkit-scrollbar {
+        width: 0;
+    }
+</style>
 @endsection
 
 @section('content')

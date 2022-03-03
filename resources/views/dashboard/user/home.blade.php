@@ -8,7 +8,11 @@
 
         <div class="p-3 flex justify-center items-center w-full">
             <div class="bg-slate-200 rounded-full w-[300px] h-[300px] overflow-hidden">
-                <img src="{{ asset('storage/' . auth()->user()->profile_image) }}" alt="Profile Image" class="max-w-[300px]"/>
+                @if (auth()->user()->profile_image == null)
+                    <img src="/img/default_user_profile.jpg" alt="Profile Image" class="max-w-[300px]"/>
+                @else
+                    <img src="{{ asset('storage/' . auth()->user()->profile_image) }}" alt="Profile Image" class="max-w-[300px]"/>
+                @endif
             </div>
         </div>
     </div>

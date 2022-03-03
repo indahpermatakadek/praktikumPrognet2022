@@ -16,20 +16,21 @@
         }
 
         #circle {
-            clip-path: circle(600px at right 800px);
+            clip-path: circle(525px at right 800px);
         }
 
-        @yield('css');
     </style>
+    
+    @yield('css')
 
     <title>Praktikum Pemrograman Internet 2022</title>
 </head>
 <body>
     <section class="relative w-full min-h-screen py-[100px] px-[50px] md:p-[100px] flex justify-between items-center bg-[#f7f7f7] ">
 
-        <div id="circle" class="absolute sm:top-0 bottom-0 sm:left-0 right-0 w-full h-[60%] sm:h-full bg-[#951b5c]"></div>
+        <div id="circle" class="absolute top-0 left-0 w-full h-[60%] h-full bg-[#951b5c]"></div>
 
-        <header class="absolute top-0 left-0 w-full py-[40px] px-[10px] sm:px-[50px] md:px-[100px] flex justify-between items-center">
+        <header class="absolute top-0 left-0 w-full py-[40px] px-[10px] sm:px-[50px] md:px-[100px] flex justify-center sm:justify-between items-center">
 
             <a href="{{ route('user.homepage') }}" class="relative max-w-full hidden sm:block">
                 <img src="/img/logo.jpeg" alt="Logo" class="w-16 rounded-full">
