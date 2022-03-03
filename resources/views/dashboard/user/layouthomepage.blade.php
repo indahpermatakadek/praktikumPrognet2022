@@ -15,6 +15,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         #circle {
             clip-path: circle(525px at right 800px);
         }
@@ -43,12 +47,13 @@
                     </a>
                 </li>
                 <li class="list-none flex-3 mr-2">
-                    <a href="{{ route('user.collections') }}" class="inline-block text-[#333] font-normal ml-[40px] no-underline text-center hover:text-[#951b5c]">
+                    {{-- <a href="{{ route('user.collections') }}" class="inline-block text-[#333] font-normal ml-[40px] no-underline text-center hover:text-[#951b5c]"> --}}
+                    <a href="{{ route('user.homepage') }}#collections" class="inline-block text-[#333] font-normal ml-[40px] no-underline text-center hover:text-[#951b5c]">
                         Collections
                     </a>
                 </li>
                 <li class="list-none flex-3 mr-2">
-                    <a href="{{ route('user.about') }}" class="inline-block text-[#333] font-normal ml-[40px] no-underline text-center hover:text-[#951b5c]">
+                    <a href="{{ route('user.homepage') }}#about" class="inline-block text-[#333] font-normal ml-[40px] no-underline text-center hover:text-[#951b5c]">
                         About Us
                     </a>
                 </li>
@@ -71,6 +76,10 @@
             </ul>
 
         </header>
+
+        <div class="w-10 h-10 bg-white rounded-full flex items-center fixed bottom-5 right-5 cursor-pointer">
+            <a href="#" class="text-xl text-white mx-auto">🔝</a>
+        </div>
 
         @yield('content')
 

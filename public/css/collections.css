@@ -1,4 +1,4 @@
-#container .box {
+#collection_card .box {
     position: relative;
     width: 250px;
     height: 350px;
@@ -12,7 +12,7 @@
     transform-style: preserve-3d;
 }
 
-#container .box::before {
+#collection_card .box::before {
     content: "PAIR";
     position: absolute;
     top: 15px;
@@ -25,7 +25,7 @@
     transition: 0.5s;
 }
 
-#container .box::after {
+#collection_card .box::after {
     content: "SHOES";
     position: absolute;
     bottom: 15px;
@@ -38,12 +38,12 @@
     transition: 0.5s;
 }
 
-#container .box:hover::before,
-#container .box:hover::after {
+#collection_card .box:hover::before,
+#collection_card .box:hover::after {
     opacity: 0.5;
 }
 
-#container .box .name {
+#collection_card .box .name {
     position: absolute;
     top: 0;
     left: 0;
@@ -57,12 +57,12 @@
     z-index: 10;
 }
 
-#container .box:hover .name {
+#collection_card .box:hover .name {
     top: 40px;
     opacity: 1;
 }
 
-#container .box .buy {
+#collection_card .box .buy {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -78,12 +78,12 @@
     z-index: 10;
 }
 
-#container .box:hover .buy {
+#collection_card .box:hover .buy {
     bottom: 30px;
     opacity: 1;
 }
 
-#container .box .shoes {
+#collection_card .box .shoes {
     position: relative;
     top: 50%;
     left: 50%;
@@ -95,6 +95,6 @@
     transform: translate3d(-50%, -50%, 0px);
 }
 
-#container .box:hover .shoes {
+#collection_card .box:hover .shoes {
     transform: translate3d(-50%, -50%, 100px);
 }

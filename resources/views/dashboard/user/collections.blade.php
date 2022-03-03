@@ -22,7 +22,7 @@
             </h2>
         </div>
 
-        <div id="container" class="relative flex flex-wrap justify-center items-center min-h-[100vh]">
+        <div id="collection_card" class="relative flex flex-wrap justify-center items-center min-h-[100vh]">
             <div class="box">
                 <h2 class="name">For You</h2>
                 <a href="/user/home" class="buy">Buy Now</a>

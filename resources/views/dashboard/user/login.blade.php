@@ -1,7 +1,7 @@
 @extends('dashboard.user.layouthomepage')
 
 @section('content')
-<div class="relative w-[400px] border border-slate-200 rounded-xl bg-[#fff]/50 mx-auto md:ml-[50px] shadow-xl p-5">
+<div class="relative w-[400px] border border-slate-200 rounded-xl bg-[#fff]/50 mx-auto md:ml-[50px] shadow-xl p-5 mt-10">
 
     <center><h2 class="text-[#951b5c] text-5xl font-black mb-4 w-full">Login Here</h2></center>
 
