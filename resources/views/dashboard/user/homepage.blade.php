@@ -1,9 +1,5 @@
 @extends('dashboard.user.layouthomepage')
 
-@section('css')
-    <link rel="stylesheet" href="/css/collections.css">
-@endsection
-
 @section('content')
 <div class="w-full">
     <div class="relative w-full flex justify-between items-center mt-10">
@@ -11,7 +7,7 @@
         <div class="relative max-w-full sm:max-w-[300px] lg:max-w-[600px]">
 
             <h2 class="text-[#333] text-[3em] md:text-[2em] lg:text-[4em] leading-[1.4em] font-medium">It's not just Shoes <br>
-                It's <span class="text-[#951b5c] text-[1.2em] font-black">Pair of Shoes</span>
+                It's <span class="text-slate-500 sm:text-[#951b5c] text-[1.2em] font-bold lg:font-black">Pair of Shoes</span>
             </h2>
 
             <p>

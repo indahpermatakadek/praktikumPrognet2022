@@ -8,6 +8,8 @@
     {{-- <link rel="stylesheet" href="css/style.css"> --}}
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <link rel="stylesheet" href="/css/collections.css">
+
     <style>
         * {
             margin: 0;
@@ -25,8 +27,6 @@
 
     </style>
     
-    @yield('css')
-
     <title>Praktikum Pemrograman Internet 2022</title>
 </head>
 <body>
@@ -35,9 +35,13 @@
         <div id="circle" class="absolute top-0 left-0 w-full h-[60%] h-full bg-[#951b5c]"></div>
 
         <header class="absolute top-0 left-0 w-full py-[40px] px-[10px] sm:px-[50px] md:px-[100px] flex justify-center sm:justify-between items-center">
-
-            <a href="{{ route('user.homepage') }}" class="relative max-w-full hidden sm:block">
-                <img src="/img/logo.jpeg" alt="Logo" class="w-16 rounded-full">
+            <a href="{{ route('user.homepage') }}">
+                <div class="relative max-w-full flex justify-start items-center">
+                    <img src="/img/logo.jpeg" alt="Logo" class="w-16 rounded-full">
+                    <div class="relative ml-4 text-[1.5em] font-semibold hidden xl:inline">
+                        Praktikum Pemrograman Internet
+                    </div>
+                </div>
             </a>
 
             <ul class="relative flex">
