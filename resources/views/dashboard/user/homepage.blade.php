@@ -1,8 +1,12 @@
 @extends('dashboard.user.layouthomepage')
 
 @section('content')
+<div class="w-10 h-10 bg-white rounded-full flex items-center fixed bottom-5 right-5 cursor-pointer">
+    <a href="#" class="text-xl text-white mx-auto">🔝</a>
+</div>
+
 <div class="w-full">
-    <div class="relative w-full flex justify-between items-center mt-10">
+    <div id="home" class="relative w-full flex justify-between items-center mt-10">
 
         <div class="relative max-w-full sm:max-w-[300px] lg:max-w-[600px]">
 
@@ -106,4 +110,24 @@
         speed: 400
     });
 </script>
+@endsection
+
+@section('footer')
+    <footer class="text-center text-white" style="background-color: #0a4275;">
+        <div class="container p-6">
+            <div class="">
+            <p class="flex justify-center items-center">
+                <span class="mr-4">Register for free</span>
+                <a href="{{ route('user.register') }}" class="inline-block px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+                Sign up!
+                </a>
+            </p>
+            </div>
+        </div>
+
+        <div class="text-center p-4 bg-slate-700">
+            © 2022 Copyright:
+            <a class="text-white" href="{{ route('user.homepage') }}">Praktikum Pemrograman Internet 12</a>
+        </div>
+    </footer>
 @endsection

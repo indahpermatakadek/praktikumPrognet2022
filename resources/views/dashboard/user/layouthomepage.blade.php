@@ -24,21 +24,21 @@
         #circle {
             clip-path: circle(525px at right 800px);
         }
-
     </style>
+    @yield('css')
     
     <title>Praktikum Pemrograman Internet 2022</title>
 </head>
 <body>
-    <section class="relative w-full min-h-screen py-[100px] px-[50px] md:p-[100px] flex justify-between items-center bg-[#f7f7f7] ">
+    <section class="relative w-full min-h-screen py-[100px] px-[50px] md:p-[100px] flex justify-between items-center bg-[#f7f7f7]">
 
         <div id="circle" class="absolute top-0 left-0 w-full h-[60%] h-full bg-[#951b5c]"></div>
 
-        <header class="absolute top-0 left-0 w-full py-[40px] px-[10px] sm:px-[50px] md:px-[100px] flex justify-center sm:justify-between items-center">
-            <a href="{{ route('user.homepage') }}">
+        <header class="absolute top-0 left-0 w-full py-[20px] px-[10px] sm:px-[50px] md:px-[100px] flex justify-center sm:justify-between items-center bg-[#f7f7f7]">
+            <a href="{{ route('user.homepage') }}" class="hidden sm:flex">
                 <div class="relative max-w-full flex justify-start items-center">
                     <img src="/img/logo.jpeg" alt="Logo" class="w-16 rounded-full">
-                    <div class="relative ml-4 text-[1.5em] font-semibold hidden xl:inline">
+                    <div class="relative ml-4 text-[1.5em] font-semibold inline sm:hidden lg:inline">
                         Praktikum Pemrograman Internet
                     </div>
                 </div>
@@ -46,7 +46,7 @@
 
             <ul class="relative flex">
                 <li class="list-none flex-3 mr-2">
-                    <a href="{{ route('user.homepage') }}" class="inline-block text-[#333] font-normal ml-[40px] no-underline text-center hover:text-[#951b5c]">
+                    <a href="{{ route('user.homepage') }}#home" class="inline-block text-[#333] font-normal ml-[40px] no-underline text-center hover:text-[#951b5c]">
                         Home
                     </a>
                 </li>
@@ -64,14 +64,14 @@
                 @auth
                 <form action="{{ route('user.logout') }}" method="POST">
                     @csrf
-                    <li class="list-none flex-3">
+                    <li class="list-none flex-3 mr-10 sm:mr-0">
                         <button type="submit" class="inline-block text-[#333] font-normal ml-[40px] no-underline text-center hover:text-[#951b5c]">    
                             Logout
                         </button>
                     </li>
                 </form>
                 @else
-                <li class="list-none flex-3">
+                <li class="list-none flex-3 mr-10 sm:mr-0">
                     <a href="{{ route('user.login') }}" class="inline-block text-[#333] font-normal ml-[40px] no-underline text-center hover:text-[#951b5c]">
                         Login
                     </a>
@@ -81,12 +81,10 @@
 
         </header>
 
-        <div class="w-10 h-10 bg-white rounded-full flex items-center fixed bottom-5 right-5 cursor-pointer">
-            <a href="#" class="text-xl text-white mx-auto">🔝</a>
-        </div>
-
         @yield('content')
 
     </section>
+
+    @yield('footer')
 </body>
 </html>

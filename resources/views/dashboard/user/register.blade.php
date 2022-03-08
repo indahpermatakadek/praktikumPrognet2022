@@ -5,11 +5,11 @@
     #user_details::-webkit-scrollbar {
         width: 0;
     }
-    </style>
+</style>
 @endsection
 
 @section('content')
-<div class="relative max-w-lg border border-slate-200 rounded-xl bg-[#fff]/50 mx-auto md:ml-[50px] shadow-xl p-5 mt-10">
+<div class="relative max-w-lg border border-slate-200 rounded-xl bg-[#fff]/50 mx-auto md:ml-[50px] shadow-xl p-5 mt-5">
 
     <center><h2 class="text-[#951b5c] text-5xl font-black mb-4">SignIn Here</h2></center>
 
