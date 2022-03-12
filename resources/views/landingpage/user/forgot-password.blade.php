@@ -1,7 +1,7 @@
-@extends('dashboard.admin.layouthomepage')
+@extends('landingpage.user.layout')
 
 @section('content')
-<div class="relative max-w-md border border-slate-200 rounded-xl bg-[#f7f7f7] mx-auto shadow-xl p-5">
+<div class="relative max-w-lg border border-slate-200 rounded-xl bg-[#fff]/50 mx-auto md:ml-[50px] shadow-xl p-5 mt-5">
 
     <center><h2 class="text-[#951b5c] text-5xl font-black mb-4 w-full">Reset Password</h2></center>
 
@@ -24,7 +24,7 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.request-reset') }}" method="POST">
+    <form action="{{ route('user.request-reset') }}" method="POST">
         @csrf
         <label for="email">
             <span class="block font-semibold mb-1 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5 ">Email</span>

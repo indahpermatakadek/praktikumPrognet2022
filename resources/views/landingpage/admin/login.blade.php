@@ -1,9 +1,10 @@
-@extends('dashboard.user.layouthomepage')
+@extends('landingpage.admin.layout')
 
 @section('content')
-<div class="relative max-w-lg border border-slate-200 rounded-xl bg-[#fff]/50 mx-auto md:ml-[50px] shadow-xl p-5 mt-5">
+    
+<div class="relative max-w-md border border-slate-200 rounded-xl bg-[#f7f7f7] mx-auto shadow-xl p-5">
 
-    <center><h2 class="text-[#951b5c] text-5xl font-black mb-4 w-full">Reset Password</h2></center>
+    <center><h2 class="text-[#951b5c] text-5xl font-black mb-4 w-full">Login Here</h2></center>
 
     <hr class="my-2"/>
 
@@ -24,18 +25,41 @@
         </div>
     @endif
 
-    <form action="{{ route('user.request-reset') }}" method="POST">
+    <form action="{{ route('admin.doLogin') }}" method="POST">
         @csrf
         <label for="email">
             <span class="block font-semibold mb-1 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5 ">Email</span>
             <input type="email" id="email" name="email" placeholder="masukkan email ..." class="peer px-3 py-2 border shadow rounded w-full block text-sm focus:outline-none focus:ring-1 focus:ring-[#951b5c] focus:border-[#951b5c] invalid:text-pink-700" autofocus>
             <p class="text-sm m-1 text-pink-700 invisible peer-invalid:visible">Email tidak valid</p>
         </label>
+        
+        <label for="password">
+            <span class="block font-semibold mb-1 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5 ">Password</span>
+            <input type="password" id="password" name="password" placeholder="masukkan password ..." class="peer px-3 py-2 border shadow rounded w-full block text-sm focus:outline-none focus:ring-1 focus:ring-[#951b5c] focus:border-[#951b5c]" required>
+        </label>
 
-        <button type="submit" class="mt-4 rounded px-4 py-1 w-full bg-[#80134d] text-slate-100 hover:bg-[#951b5c] active:bg-[#630c3b] hover:shadow-xl hover:shadow-[#951b5c/50]">
-            Reset
+        <div class="flex justify-between items-end my-4">
+            <div>
+                <span class="cursor-pointer">
+                    <input class="cursor-pointer" type="checkbox" name="remember" id="remember" value="remember">
+                    <label class="cursor-pointer" for="remember">Keep me logged in</label>
+                </span>
+            </div>
+            <div>
+                <a href="{{ route('admin.forgot-password') }}" class="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">
+                    Forgot password?
+                </a>
+            </div>
+        </div>
+
+        <button type="submit" class="rounded px-4 py-1 w-full bg-[#80134d] text-slate-100 hover:bg-[#951b5c] active:bg-[#630c3b] hover:shadow-xl hover:shadow-[#951b5c/50]">
+            Login
         </button>
+
+        <center class="mt-4"><a href="{{ route('admin.register') }}" class="font-semibold text-[#80134d] underline hover:text-[#951b5c]">Register</a></center>
+
     </form>
     
 </div>
+
 @endsection

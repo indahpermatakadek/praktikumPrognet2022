@@ -135,7 +135,7 @@ class AdminController extends Controller
         // Ganti Password
         if($admin){
             $email = $admin->email;
-            return view('dashboard.admin.change-password', ['email'=>$email]);
+            return view('landingpage.admin.change-password', ['email'=>$email]);
         }
 
         // Gagal ganti Password

@@ -150,7 +150,7 @@ class UserController extends Controller
         // Ganti Password
         if($user){
             $email = $user->email;
-            return view('dashboard.user.change-password', ['email'=>$email]);
+            return view('landingpage.user.change-password', ['email'=>$email]);
         }
 
         // Gagal ganti Password

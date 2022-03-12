@@ -1,8 +1,7 @@
-@extends('dashboard.admin.layouthomepage')
+@extends('landingpage.user.layout')
 
 @section('content')
-    
-<div class="relative max-w-md border border-slate-200 rounded-xl bg-[#f7f7f7] mx-auto shadow-xl p-5">
+<div class="relative w-[400px] border border-slate-200 rounded-xl bg-[#fff]/50 mx-auto md:ml-[50px] shadow-xl p-5 mt-5">
 
     <center><h2 class="text-[#951b5c] text-5xl font-black mb-4 w-full">Login Here</h2></center>
 
@@ -25,7 +24,7 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.doLogin') }}" method="POST">
+    <form action="{{ route('user.doLogin') }}" method="POST">
         @csrf
         <label for="email">
             <span class="block font-semibold mb-1 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5 ">Email</span>
@@ -38,7 +37,7 @@
             <input type="password" id="password" name="password" placeholder="masukkan password ..." class="peer px-3 py-2 border shadow rounded w-full block text-sm focus:outline-none focus:ring-1 focus:ring-[#951b5c] focus:border-[#951b5c]" required>
         </label>
 
-        <div class="flex justify-between items-end my-4">
+        <div class="flex justify-between items-end my-3">
             <div>
                 <span class="cursor-pointer">
                     <input class="cursor-pointer" type="checkbox" name="remember" id="remember" value="remember">
@@ -46,20 +45,19 @@
                 </span>
             </div>
             <div>
-                <a href="{{ route('admin.forgot-password') }}" class="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">
+                <a href="{{ route('user.forgot-password') }}" class="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">
                     Forgot password?
                 </a>
             </div>
         </div>
 
-        <button type="submit" class="rounded px-4 py-1 w-full bg-[#80134d] text-slate-100 hover:bg-[#951b5c] active:bg-[#630c3b] hover:shadow-xl hover:shadow-[#951b5c/50]">
+        <button type="submit" class="mt-3 rounded px-4 py-1 w-full bg-[#80134d] text-slate-100 hover:bg-[#951b5c] active:bg-[#630c3b] hover:shadow-xl hover:shadow-[#951b5c/50]">
             Login
         </button>
 
-        <center class="mt-4"><a href="{{ route('admin.register') }}" class="font-semibold text-[#80134d] underline hover:text-[#951b5c]">Register</a></center>
+        <center class="mt-4"><span>Belum punya Akun? <a href="{{ route('user.register') }}" class="font-semibold text-[#80134d] underline hover:text-[#951b5c]">Registrasi di Sini</a></span></center>
 
     </form>
     
 </div>
-
 @endsection

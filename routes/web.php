@@ -27,19 +27,19 @@ Auth::routes();
 // User
 Route::prefix('user')->name('user.')->group(function(){
     
-    Route::view('/homepage','dashboard.user.homepage')      ->name('homepage');
-    Route::view('/collections','dashboard.user.collections')->name('collections');
-    Route::view('/about','dashboard.user.about')            ->name('about');
+    Route::view('/homepage','landingpage.user.homepage')      ->name('homepage');
+    Route::view('/collections','landingpage.user.collections')->name('collections');
+    Route::view('/about','landingpage.user.about')            ->name('about');
     
     // Sebelum Login
     Route::middleware(['guest:web'])->group(function(){
-        Route::view('/login',   'dashboard.user.login')                        ->name('login');
-        Route::view('/register','dashboard.user.register')                     ->name('register');
+        Route::view('/login',   'landingpage.user.login')                      ->name('login');
+        Route::view('/register','landingpage.user.register')                   ->name('register');
         Route::post('/create',  [UserController::class, 'create'])             ->name('create');
         Route::get('/email',    [EmailController::class, 'email'])             ->name('email');
         Route::get('/verify',   [UserController::class, 'verify'])             ->name('verify');
         Route::post('/doLogin', [UserController::class, 'doLogin'])            ->name('doLogin');
-        Route::view('/forgot-password','dashboard.user.forgot-password')       ->name('forgot-password');
+        Route::view('/forgot-password','landingpage.user.forgot-password')     ->name('forgot-password');
         Route::post('/request-reset', [UserController::class, 'request_reset'])->name('request-reset');
         Route::get('/reset', [EmailController::class, 'reset'])                ->name('reset');
         Route::get('/verify-reset', [UserController::class, 'verify_reset'])   ->name('verify-reset');
@@ -59,13 +59,13 @@ Route::prefix('admin')->name('admin.')->group(function(){
     
     // Sebelum Login
     Route::middleware(['guest:admin'])->group(function(){
-        Route::view('/login','dashboard.admin.login')                           ->name('login');
-        Route::view('/register','dashboard.admin.register')                     ->name('register');
+        Route::view('/login','landingpage.admin.login')                         ->name('login');
+        Route::view('/register','landingpage.admin.register')                   ->name('register');
         Route::post('/create',  [AdminController::class, 'create'])             ->name('create');
         Route::get('/email',    [EmailController::class, 'admin_email'])        ->name('email');
         Route::get('/verify',   [AdminController::class, 'verify'])             ->name('verify');
         Route::post('/doLogin', [AdminController::class, 'doLogin'])            ->name('doLogin');
-        Route::view('/forgot-password','dashboard.admin.forgot-password')       ->name('forgot-password');
+        Route::view('/forgot-password','landingpage.admin.forgot-password')     ->name('forgot-password');
         Route::post('/request-reset', [AdminController::class, 'request_reset'])->name('request-reset');
         Route::get('/reset',        [EmailController::class, 'admin_reset'])    ->name('reset');
         Route::get('/verify-reset', [AdminController::class, 'verify_reset'])   ->name('verify-reset');

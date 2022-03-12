@@ -1,4 +1,4 @@
-@extends('dashboard.admin.layouthomepage')
+@extends('landingpage.admin.layout')
 
 @section('css')
 #user_details::-webkit-scrollbar {

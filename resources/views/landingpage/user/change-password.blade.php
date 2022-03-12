@@ -1,4 +1,4 @@
-@extends('dashboard.user.layouthomepage')
+@extends('landingpage.user.layout')
 
 @section('css')
 <style>

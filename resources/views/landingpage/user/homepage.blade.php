@@ -1,4 +1,4 @@
-@extends('dashboard.user.layouthomepage')
+@extends('landingpage.user.layout')
 
 @section('content')
 <div class="w-10 h-10 bg-white rounded-full flex items-center fixed bottom-5 right-5 cursor-pointer">
