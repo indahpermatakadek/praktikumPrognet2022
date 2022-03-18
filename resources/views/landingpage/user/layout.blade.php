@@ -7,6 +7,7 @@
 
     {{-- <link rel="stylesheet" href="css/style.css"> --}}
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
 
     <link rel="stylesheet" href="/css/collections.css">
 
@@ -23,6 +24,10 @@
 
         #circle {
             clip-path: circle(525px at right 800px);
+        }
+
+        #on {
+            display: none;
         }
     </style>
     @yield('css')
@@ -44,7 +49,7 @@
                 </div>
             </a>
 
-            <ul class="relative flex">
+            <ul class="relative flex mt-5 sm:mt-0">
                 <li class="list-none flex-3 mr-2">
                     <a href="{{ route('user.homepage') }}#home" class="inline-block text-[#333] font-normal ml-[40px] no-underline text-center hover:text-[#951b5c]">
                         Home
@@ -86,5 +91,31 @@
     </section>
 
     @yield('footer')
+
+    <script>
+      feather.replace()
+    </script>
+    <script>
+        const visibilityToggle = document.querySelector('#visibility');
+        const input            = document.querySelector('#password');
+        const icon_on          = document.querySelector('#on');
+        const icon_off         = document.querySelector('#off');
+        
+        var password = true;
+
+        visibilityToggle.addEventListener('click', function() {
+            if(password){
+                input.setAttribute('type','text');
+                icon_on.style.display  = "block";
+                icon_off.style.display = "none";
+            }
+            else{
+                input.setAttribute('type','password');
+                icon_on.style.display  = "none";
+                icon_off.style.display = "block";
+            }
+            password = !password;
+        });
+    </script>
 </body>
 </html>

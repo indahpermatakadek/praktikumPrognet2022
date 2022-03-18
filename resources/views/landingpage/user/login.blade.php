@@ -34,7 +34,14 @@
         
         <label for="password">
             <span class="block font-semibold mb-1 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5 ">Password</span>
-            <input type="password" id="password" name="password" placeholder="masukkan password ..." class="peer px-3 py-2 border shadow rounded w-full block text-sm focus:outline-none focus:ring-1 focus:ring-[#951b5c] focus:border-[#951b5c]" required>
+            <div class="relative w-full flex justify-between items-center">
+                <input type="password" id="password" name="password" placeholder="masukkan password ..." class="px-3 py-2 border shadow rounded w-full block text-sm focus:outline-none focus:ring-1 focus:ring-[#951b5c] focus:border-[#951b5c]" required>
+                <span id="visibility" class="absolute right-2 text-slate-500 hover:cursor-pointer">
+                    <i data-feather="eye-off" id="off"></i>
+                    <i data-feather="eye"     id="on" ></i>
+                </span>
+            </div>
+
         </label>
 
         <div class="flex justify-between items-end my-3">

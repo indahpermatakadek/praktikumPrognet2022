@@ -7,6 +7,7 @@
 
     {{-- <link rel="stylesheet" href="css/style.css"> --}}
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
         * {
@@ -19,6 +20,10 @@
             clip-path: circle(600px at right 800px);
         }
 
+        #on {
+            display: none;
+        }
+
         @yield('css');
     </style>
 
@@ -28,4 +33,29 @@
 
     @yield('content')
 
+    <script>
+      feather.replace()
+    </script>
+    <script>
+        const visibilityToggle = document.querySelector('#visibility');
+        const input            = document.querySelector('#password');
+        const icon_on          = document.querySelector('#on');
+        const icon_off         = document.querySelector('#off');
+        
+        var password = true;
+
+        visibilityToggle.addEventListener('click', function() {
+            if(password){
+                input.setAttribute('type','text');
+                icon_on.style.display  = "block";
+                icon_off.style.display = "none";
+            }
+            else{
+                input.setAttribute('type','password');
+                icon_on.style.display  = "none";
+                icon_off.style.display = "block";
+            }
+            password = !password;
+        });
+    </script>
 </body>
