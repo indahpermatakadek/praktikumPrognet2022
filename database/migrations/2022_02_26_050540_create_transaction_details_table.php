@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('transaction_id');
+            $table->bigInteger('transactions_id');
             $table->bigInteger('product_id');
             $table->integer   ('qty')->unsigned();
             $table->double    ('discount', 9, 2);

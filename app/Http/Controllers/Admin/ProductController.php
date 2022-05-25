@@ -13,6 +13,8 @@ use App\Models\Discount;
 use App\Models\Response;
 use Redirect;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 class ProductController extends Controller
 {
@@ -175,5 +177,27 @@ class ProductController extends Controller
 
     //     return Redirect::to('/admin/discounts/show/'.$id);
     // }
+
+    public function listReviewProduct($id)
+    {
+        $data = Product::find($id);
+        $reviews = $data->product_reviews;
+        return view('pages.admins.product.review', compact('data', 'reviews'));
+    }
+
+    public function responseReview(Request $request, $id)
+    {
+        $response = Response::whereProductReviewsId($id)->get();
+        if (!$response->count() >= 0 && !$response->count() < 1) {
+            return redirect()->back()->with('danger', 'Response hanya dapat sekali.');
+        }
+        Response::create([
+            'product_reviews_id' => $id,
+            'admin_id' => Auth()->guard('admins')->id(),
+            'content' => $request->content
+        ]);
+
+        return redirect()->back()->with('success', 'Response berhasil ditambahkan.');
+    }
 
 }

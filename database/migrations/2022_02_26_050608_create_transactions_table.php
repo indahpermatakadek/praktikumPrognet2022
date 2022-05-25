@@ -24,9 +24,8 @@ return new class extends Migration
             $table->double('sub_total', 9, 2);
             $table->bigInteger('user_id');
             $table->bigInteger('courier_id');
-            $table->string('proof_of_payment');
-            $table->timestamps();
-            $table->enum('status',['unverified','verified','delivered','success','expired','canceled']);
+            $table->string('proof_of_payment')->nullable();
+            $table->enum('status', ['Telah Sampai', 'Dalam Pengiriman', 'Dibatalkan', 'Belum Terbayar', 'Pending', 'Expired']);            $table->timestamps();
         });
     }
 

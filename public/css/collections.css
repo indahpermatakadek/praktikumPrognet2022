@@ -13,7 +13,7 @@
 }
 
 #collection_card .box::before {
-    content: "PAIR";
+    content: "";
     position: absolute;
     top: 15px;
     left: 15px;
@@ -26,7 +26,7 @@
 }
 
 #collection_card .box::after {
-    content: "SHOES";
+    content: "";
     position: absolute;
     bottom: 15px;
     right: 15px;
@@ -49,6 +49,7 @@
     left: 0;
     text-align: center;
     color: #232323;
+    font-style: bold;
     width: 100%;
     transform-style: preserve-3d;
     transform: translate3d(0, 0, 75px);
@@ -80,6 +81,27 @@
 
 #collection_card .box:hover .buy {
     bottom: 30px;
+    opacity: 1;
+}
+
+
+#collection_card .box .price {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, 0, 75px);
+    color: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+}
+
+#collection_card .box:hover .price {
+    bottom: 70px;
     opacity: 1;
 }
 

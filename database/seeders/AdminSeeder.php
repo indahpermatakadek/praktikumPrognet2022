@@ -20,7 +20,7 @@ class AdminSeeder extends Seeder
     {
         $name = ['Admin 1', 'Admin 2', 'Admin 3', 'Admin 4'];
 
-        $username = ['admin_1', 'admin_2', 'admin_3', 'admin_4'];
+        $username = ['admin', 'admin_2', 'admin_3', 'admin_4'];
 
         $profile_pic = ['Picture 1', 'Picture 2', 'Picture 3', 'Picture 4'];
 

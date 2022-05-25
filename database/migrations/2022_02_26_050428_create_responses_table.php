@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('rensponses', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('review_id');
+            $table->bigInteger('product_reviews_id');
             $table->bigInteger('admin_id');
             $table->text('content');
             $table->timestamps();

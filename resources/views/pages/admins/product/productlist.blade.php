@@ -48,6 +48,7 @@
                                         <td style="align: center;">
                                             <a href="products/show/{{$product->id}}" class="btn bg-gradient-info">Detail</a>
                                             <a href="products/edit/{{$product->id}}" class="btn bg-gradient-warning">Edit</a>
+                                            <a href="{{ url('admins/products/' . $product->id . '/reviews') }}" class="btn bg-gradient-primary">Review</a>
                                             <a href="/admins/products/delete/{{$product->id}}" class="btn bg-gradient-danger" onclick="return confirm('Apa yakin ingin menghapus data ini?')">Delete</a>
                                         </td>
                                     </tr>

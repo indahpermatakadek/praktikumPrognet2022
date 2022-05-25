@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\User\ProductUserController;
+use App\Http\Controllers\User\OrderUserController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\Admin\TransactionResourceController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -10,12 +14,6 @@ use App\Http\Controllers\Admin\DiscountController;
 use App\Http\Controllers\Admin\CourierController;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Auth;
-
-
-
-
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -60,8 +58,17 @@ Route::prefix('user')->name('user.')->group(function(){
     
     // Setelah Login
     Route::middleware(['auth:web'])->group(function(){
-        Route::view('/home','dashboard.user.home')               ->name('home');
+        Route::view('/home','users.homepage')               ->name('home');
         Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+        Route::get('product/{product}', [ProductUserController::class, 'show'])->name('product.show');
+        Route::post('product/{product}/review', [ProductUserController::class, 'storeReview'])->name('review.store');
+        Route::get('product/{product}/buy-now', [ProductUserController::class, 'buyNow'])->name('product.buynow');
+        Route::get('payment/{transaction}', [TransactionController::class, 'payment'])->name('payment');
+        Route::post('payment/{transaction}/proof_payment', [TransactionController::class, 'uploadProofPayment'])->name('proof_payment');
+        Route::post('payment/{transaction}', [TransactionController::class, 'deleteTransaction'])->name('delete-transaction');
+        Route::view('cart', 'users.cart.index')->name('cart');
+        Route::view('checkout', 'users.transaction.checkout')->name('checkout');
+        Route::get('my-transaction', [OrderUserController::class, 'index'])->name('my-transaction');
     });
 
 });
@@ -95,8 +102,6 @@ Route::prefix('admins/')->name('admins.')->group(function () {
     Route::middleware('auth:admins')->group(function () {
         Route::post('logout', [AdminController::class, 'logout'])->name('logout');
         Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-        
-        
   });
 
 
@@ -114,6 +119,8 @@ Route::prefix('admins/')->name('admins.')->group(function () {
   Route::get('products/edit/{id}', [ProductController::class, 'edit']);
   Route::post('products/update/{id}', [ProductController::class, 'update']);
   Route::get('products/delete/{id}', [ProductController::class, 'delete']);
+  Route::get('/products/{id}/reviews', [ProductController::class, 'listReviewProduct'])->name('product.reviews');
+  Route::post('/products/{id}/review-response', [ProductController::class, 'responseReview'])->name('product.review-response');
 
   Route::get('discounts', [DiscountController::class, 'index']);
   Route::get('discounts/create', [DiscountController::class, 'create']);
@@ -129,6 +136,11 @@ Route::prefix('admins/')->name('admins.')->group(function () {
   Route::get('couriers/edit/{id}', [CourierController::class, 'edit']);
   Route::post('couriers/update/{id}', [CourierController::class, 'update']);
   Route::get('couriers/delete/{id}', [CourierController::class, 'delete']);
+
+  Route::resource('transaction', TransactionResourceController::class);
+  Route::post('transaction/{transaction}/cancel', [TransactionResourceController::class, 'cancelTransaction'])->name('transaction.cancel');
+  Route::post('transaction/{transaction}/accept', [TransactionResourceController::class, 'acceptPayment'])->name('transaction.accept');
+  Route::post('transaction/{transaction}/shipped', [TransactionResourceController::class, 'updateShipped'])->name('transaction.shipped');
 
 });
 

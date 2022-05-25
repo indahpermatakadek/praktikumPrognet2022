@@ -11,7 +11,7 @@ class TransactionDetails extends Model
 {
     use HasFactory;
 
-    protected $table = 'transaction_details';
+    protected $guarded = [];
 
     public function products() { 
       return $this->belongsTo(Product::class);

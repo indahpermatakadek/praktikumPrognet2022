@@ -12,14 +12,14 @@ class ProductReviews extends Model
 {
     use HasFactory;
 
-    protected $table = 'product_reviews';
+    protected $guarded = [];
 
     public function product() { 
       return $this->belongsTo(Product::class);
     }
 
     public function response() { 
-      return $this->hasMany(Response::class);
+      return $this->hasOne(Response::class,'product_reviews_id');
     }
 
     public function user() { 

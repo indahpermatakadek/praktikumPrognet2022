@@ -11,7 +11,7 @@ class carts extends Model
 {
     use HasFactory;
 
-    protected $table = 'carts';
+    protected $guarded = [];
 
     public function product() { 
       return $this->belongsTo(Product::class);
