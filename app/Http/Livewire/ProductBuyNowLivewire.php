@@ -114,7 +114,7 @@ class ProductBuyNowLivewire extends Component
         ]);
 
         $trx = Transactions::create([
-            'timeout' => Carbon::now()->addDay(),
+            'timeout' => Carbon::now()->timezone('Asia/Makassar')->addDay(),
             'address' => $this->address,
             'regency' => City::find($this->id_city)->title,
             'province' => Province::find($this->id_province)->title,

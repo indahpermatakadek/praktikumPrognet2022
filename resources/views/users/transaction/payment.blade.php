@@ -1,6 +1,7 @@
 @extends('users.layout')
 
 @section('content')
+<div class="w-full">
     <main id="content" role="main" class="cart-page">
         <div class="container">
             <div class="mt-4">
@@ -149,4 +150,5 @@
             </div>
         </div>
     </main>
+</div>
 @endsection

@@ -17,13 +17,8 @@ class ProductMiniCartLivewire extends Component
         if (!auth()->check()) {
             return view('livewire.product-mini-cart');
         }
-        $carts = carts::whereUserId(auth()->user()->id)->whereProductId($this->product->id)->first();
+        $carts = carts::whereUserId(auth()->user()->id)->whereProductId($this->product->id);
         return view('livewire.product-mini-cart', compact('carts'));
-    }
-
-    public function mount(Product $product)
-    {
-        $this->product = $product;
     }
 
     public function addToCart()

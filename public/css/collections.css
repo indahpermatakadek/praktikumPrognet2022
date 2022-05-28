@@ -80,7 +80,7 @@
 }
 
 #collection_card .box:hover .buy {
-    bottom: 30px;
+    bottom: 20px;
     opacity: 1;
 }
 
@@ -98,6 +98,26 @@
     transition: 0.5s;
     opacity: 0;
     z-index: 10;
+}
+
+#collection_card .box .price2 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, 0, 65px);
+    color: #FF0000;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: line-through;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+}
+
+#collection_card .box:hover .price2 {
+    bottom: 55px;
+    opacity: 1;
 }
 
 #collection_card .box:hover .price {

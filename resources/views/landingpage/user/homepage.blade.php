@@ -20,7 +20,7 @@
                 Voluptas, sapiente numquam sunt voluptatum optio veritatis odio!
             </p>
 
-            <a href="Ooyeah?likeyouhadenoughbraincellstolearnmore" class="inline-block rounded-full shadow-lg shadow-[#951b5c]/50 my-2 bg-[#951b5c] py-2 px-5 font-semibold text-white hover:underline hover:decoration-2">Learn More</a>
+            <a href="/user/login" class="inline-block rounded-full shadow-lg shadow-[#951b5c]/50 my-2 bg-[#951b5c] py-2 px-5 font-semibold text-white hover:underline hover:decoration-2">Learn More</a>
 
         </div>
 
@@ -50,42 +50,42 @@
         <div id="collection_card" class="relative flex flex-wrap justify-center items-center min-h-[100vh]">
             <div class="box">
                 <h2 class="name">For You</h2>
-                <a href="/user/home" class="buy">Buy Now</a>
+                <a href="/user/login" class="buy">Buy Now</a>
                 <img src="/img/collections/shoes1.png" alt="Sepatu" class="shoes">
             </div>
             <div class="box">
                 <h2 class="name">For You</h2>
-                <a href="/user/home" class="buy">Buy Now</a>
+                <a href="/user/login" class="buy">Buy Now</a>
                 <img src="/img/collections/shoes2.png" alt="Sepatu" class="shoes">
             </div>
             <div class="box">
                 <h2 class="name">For You</h2>
-                <a href="/user/home" class="buy">Buy Now</a>
+                <a href="/user/login" class="buy">Buy Now</a>
                 <img src="/img/collections/shoes3.png" alt="Sepatu" class="shoes">
             </div>
             <div class="box">
                 <h2 class="name">For You</h2>
-                <a href="/user/home" class="buy">Buy Now</a>
+                <a href="/user/login" class="buy">Buy Now</a>
                 <img src="/img/collections/shoes4.png" alt="Sepatu" class="shoes">
             </div>
             <div class="box">
                 <h2 class="name">For You</h2>
-                <a href="/user/home" class="buy">Buy Now</a>
+                <a href="/user/login" class="buy">Buy Now</a>
                 <img src="/img/collections/shoes5.png" alt="Sepatu" class="shoes">
             </div>
             <div class="box">
                 <h2 class="name">For You</h2>
-                <a href="/user/home" class="buy">Buy Now</a>
+                <a href="/user/login" class="buy">Buy Now</a>
                 <img src="/img/collections/shoes6.png" alt="Sepatu" class="shoes">
             </div>
             <div class="box">
                 <h2 class="name">For You</h2>
-                <a href="/user/home" class="buy">Buy Now</a>
+                <a href="/user/login" class="buy">Buy Now</a>
                 <img src="/img/collections/shoes7.png" alt="Sepatu" class="shoes">
             </div>
             <div class="box">
                 <h2 class="name">For You</h2>
-                <a href="/user/home" class="buy">Buy Now</a>
+                <a href="/user/login" class="buy">Buy Now</a>
                 <img src="/img/collections/shoes8.png" alt="Sepatu" class="shoes">
             </div>
         </div>

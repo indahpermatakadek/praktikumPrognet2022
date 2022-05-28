@@ -112,7 +112,7 @@ class CheckoutLivewire extends Component
 
         $cart = carts::with('product')->whereUserId(auth()->user()->id)->whereStatus('Dalam Keranjang')->get();
         $trx = Transactions::create([
-            'timeout' => Carbon::now()->addDay(),
+            'timeout' => Carbon::now()->timezone('Asia/Makassar')->addDay(),
             'address' => $this->address,
             'regency' => City::find($this->id_city)->title,
             'province' => Province::find($this->id_province)->title,

@@ -30,8 +30,16 @@ class Product extends Model
       return $this->hasMany(ProductImages::class, 'product_id','id');
     }   
 
-    public function discounts() { 
-      return $this->hasMany(Discount::class, 'product_id','id');
+    public function discount() { 
+      return $this->hasOne(Discount::class);
+    }   
+    
+    public function isHasDiscount() { 
+      return $this->discounts ? true : false;
+    }  
+    
+    public function price_discount() { 
+      return (1 - $this->discount->percentage / 100) * $this->price;
     }   
 
     public function product_categories() {
@@ -53,4 +61,10 @@ class Product extends Model
     public function transaction_details() { 
       return $this->hasMany(TransactionDetails::class);
     } 
+
+    public function getRateAttribute(){
+      if ($this->product_reviews->count() >0){
+        return $this->product_reviews->avg('rate');
+      }
+    }
 }
